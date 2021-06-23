@@ -1,9 +1,3 @@
-// function createInstructor(firstName, lastName){
-//     return {
-//       firstName: firstName,
-//       lastName: lastName
-//     }
-//   }
 
 // Solution 1
 
@@ -23,48 +17,37 @@ const instructor1 = {
 
 console.log(instructor1);
 
-// var instructor2 = {
-//     firstName: "Colt",
-//     sayHi: function(){
-//       return "Hi!";
-//     },
-//     sayBye: function(){
-//       return this.firstName + " says bye!";
-//     }
-//   }
-
 
 // Solution 3
-  const instructor2 = {
-      firstName: "Colt",
-      sayHi() {
-          return "Hi!"
-      },
-      sayBye() {
-          return `${this.firstName} says bye!`
-      }
-  }
+const instructor2 = {
+    firstName: "Colt",
+    sayHi() {
+        return "Hi!"
+    },
+    sayBye() {
+        return `${this.firstName} says bye!`
+    }
+}
 
-  console.log(instructor2.sayHi());
-  console.log(instructor2.sayBye());
+console.log(instructor2.sayHi());
+console.log(instructor2.sayBye());
 
-  const createAnimal = (species, verb, noise) => ({
-      species,
-      verb,
-      noise,
-      [verb]() {
-          return console.log(this.noise);
-      }
-  })
+// Solution 4
+const createAnimal = (species, verb, noise) => ({
+    species,
+    verb,
+    noise,
+    [verb]() {
+        return console.log(this.noise);
+    }
+})
 
-  const d = createAnimal("dog", "bark", "Woooof!")
-// {species: "dog", bark: ƒ}
+const d = createAnimal("dog", "bark", "Woooof!")
 console.log(d);
 d.bark()  //"Woooof!"
-const s = createAnimal("sheep", "bleet", "BAAAAaaaa")
-// {species: "sheep", bleet: ƒ}
-console.log(s);
 
+const s = createAnimal("sheep", "bleet", "BAAAAaaaa")
+console.log(s);
 s.bleet() //"BAAAAaaaa"
 
 
